@@ -230,7 +230,7 @@ elif page == "Education":
     
     st.markdown("""
     <div class="custom-card">
-        <div class="card-title">Indian Institute of Technology (BHU) / ISM Dhanbad</div>
+        <div class="card-title">Indian Institute of Technology/ISM Dhanbad</div>
         <div class="card-subtitle">B.Tech in Mining Engineering</div>
         <div class="card-body">
             Currently pursuing undergraduate studies with a focus on mining techniques, geo-mechanics, and engineering fundamentals.
