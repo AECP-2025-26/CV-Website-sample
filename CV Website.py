@@ -8,25 +8,28 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# ---------- Custom Modern CSS ----------
+# ---------- Dark Mode Custom CSS ----------
 st.markdown("""
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
     
-    html, body, [class*="css"] {
+    /* Force Dark Backgrounds */
+    .stApp {
+        background-color: #0B0F17;
+        color: #E2E8F0;
         font-family: 'Inter', sans-serif;
     }
 
-    /* Hero Banner Styling */
+    /* Dark Modern Hero Banner */
     .header-container {
-        background: linear-gradient(135deg, #0F2027 0%, #203A43 50%, #2C5364 100%);
-        padding: 2.8rem 2rem;
+        background: linear-gradient(135deg, #0F172A 0%, #1E1B4B 50%, #0F172A 100%);
+        padding: 3rem 2rem;
         border-radius: 20px;
         color: #FFFFFF;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         margin-bottom: 2rem;
         text-align: center;
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(99, 102, 241, 0.2);
     }
     
     .header-name {
@@ -34,84 +37,80 @@ st.markdown("""
         font-weight: 800;
         letter-spacing: -1px;
         margin: 0;
-        background: linear-gradient(90deg, #FFFFFF, #B2FEFA);
+        background: linear-gradient(90deg, #38BDF8, #818CF8, #C084FC);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
     
     .header-subtitle {
         font-size: 1.25rem;
-        color: #E2E8F0;
+        color: #94A3B8;
         margin-top: 0.6rem;
         font-weight: 400;
     }
 
     .badge-container {
-        margin-top: 1rem;
+        margin-top: 1.2rem;
         display: flex;
         justify-content: center;
-        gap: 10px;
+        gap: 12px;
         flex-wrap: wrap;
     }
 
     .badge {
         display: inline-block;
-        padding: 0.3rem 0.9rem;
-        background: rgba(255, 255, 255, 0.12);
+        padding: 0.4rem 1rem;
+        background: rgba(255, 255, 255, 0.05);
         border-radius: 50px;
         font-size: 0.85rem;
-        color: #E2E8F0;
+        color: #CBD5E1;
         backdrop-filter: blur(8px);
-        border: 1px solid rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    /* Custom Glassmorphism Cards */
+    /* Dark Glassmorphism Cards */
     .custom-card {
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: #111827;
+        border: 1px solid #1F2937;
         border-radius: 16px;
-        padding: 1.6rem;
+        padding: 1.8rem;
         margin-bottom: 1.5rem;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         transition: transform 0.2s ease, border-color 0.2s ease;
     }
     
     .custom-card:hover {
-        transform: translateY(-2px);
-        border-color: rgba(56, 178, 172, 0.4);
-    }
-
-    @media (prefers-color-scheme: light) {
-        .custom-card {
-            background: #FFFFFF;
-            border: 1px solid #E2E8F0;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
-        }
+        transform: translateY(-3px);
+        border-color: #6366F1;
     }
 
     .card-title {
-        font-size: 1.3rem;
+        font-size: 1.35rem;
         font-weight: 700;
-        margin-bottom: 0.4rem;
-        color: #319795;
+        margin-bottom: 0.5rem;
+        color: #38BDF8;
     }
 
     .card-subtitle {
         font-size: 0.95rem;
-        color: #A0AEC0;
+        color: #94A3B8;
         margin-bottom: 1rem;
         font-weight: 500;
     }
 
     .card-body {
         font-size: 0.98rem;
-        line-height: 1.65;
+        line-height: 1.7;
+        color: #CBD5E1;
     }
 
-    /* Styled Metrics */
+    /* Dark Metric Cards */
     .metric-card {
-        background: linear-gradient(135deg, rgba(49, 151, 149, 0.1) 0%, rgba(49, 151, 149, 0.02) 100%);
-        border-left: 4px solid #319795;
+        background: rgba(17, 24, 39, 0.8);
+        border-left: 4px solid #818CF8;
+        border-top: 1px solid #1F2937;
+        border-right: 1px solid #1F2937;
+        border-bottom: 1px solid #1F2937;
         padding: 1.2rem;
         border-radius: 12px;
         text-align: left;
@@ -121,16 +120,54 @@ st.markdown("""
         font-size: 0.8rem;
         text-transform: uppercase;
         letter-spacing: 1.2px;
-        color: #718096;
+        color: #64748B;
         font-weight: 600;
     }
     .metric-value {
         font-size: 1.25rem;
         font-weight: 700;
         margin-top: 0.3rem;
+        color: #F8FAFC;
     }
 
-    /* List styling inside cards */
+    /* YouTube Promo Box */
+    .yt-card {
+        background: linear-gradient(135deg, #18181B 0%, #27272A 100%);
+        border: 1px solid #DC2626;
+        border-radius: 16px;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    .yt-title {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: #EF4444;
+        margin-bottom: 0.5rem;
+    }
+
+    /* Sidebar Customization */
+    section[data-testid="stSidebar"] {
+        background-color: #0F172A !important;
+        border-right: 1px solid #1E293B;
+    }
+
+    /* Custom Buttons / Links */
+    a.yt-button {
+        display: inline-block;
+        background-color: #FF0000;
+        color: white !important;
+        padding: 0.6rem 1.2rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        margin-top: 0.5rem;
+        transition: background-color 0.2s ease;
+    }
+    a.yt-button:hover {
+        background-color: #CC0000;
+    }
+
+    /* Styled lists */
     .custom-card ul {
         padding-left: 1.2rem;
         margin-bottom: 0;
@@ -139,10 +176,10 @@ st.markdown("""
         margin-bottom: 0.4rem;
     }
 
-    /* Image styling */
+    /* Profile Image Container */
     .profile-img-container img {
         border-radius: 18px;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.6);
         border: 1px solid rgba(255, 255, 255, 0.1);
     }
 </style>
@@ -152,11 +189,12 @@ st.markdown("""
 st.markdown("""
 <div class="header-container">
     <div class="header-name">Asimanshu Samal</div>
-    <div class="header-subtitle">Mining Engineering Student • Video Content Creator • Tech Enthusiast</div>
+    <div class="header-subtitle">Mining Engineering Student • Video Creator (@darkreaperedits) • Conservation Enthusiast</div>
     <div class="badge-container">
         <span class="badge">📍 IIT (ISM) Dhanbad</span>
         <span class="badge">🎓 B.Tech Mining Engineering</span>
-        <span class="badge">🏠 Rourkela, Odisha</span>
+        <span class="badge">🎬 Dark Reaper Edits</span>
+        <span class="badge">🌱 Sustainable Mining</span>
     </div>
 </div>
 """, unsafe_allow_html=True)
@@ -165,7 +203,7 @@ st.markdown("""
 st.sidebar.title("Navigation")
 page = st.sidebar.radio(
     "Select Page",
-    ["Home", "About", "Education", "Skills & Hobbies", "Projects & Experience", "Contact"],
+    ["Home", "About", "Education", "Hobbies & Interests", "Projects & Experience", "Contact"],
     index=0
 )
 
@@ -177,15 +215,15 @@ if page == "Home":
         st.subheader("Welcome 👋")
         st.write(
             """
-            Welcome to my personal interactive platform! I am an undergraduate Mining Engineering student at 
-            **IIT (ISM) Dhanbad** with an appetite for learning across engineering, technology, and visual media creation.
+            Welcome to my personal digital portfolio! I am an undergraduate Mining Engineering student at 
+            **IIT (ISM) Dhanbad** on an eternal search for knowledge and information.
             
-            Whether analyzing subsurface mechanics, crafting motion graphics in Adobe After Effects, or exploring software automation, 
-            I operate with a simple ethos: **stay curious, communicate directly, and build value.**
+            My passions span the technical mechanics of **sustainable resource extraction**, 
+            **environmental conservation**, reading, and **high-end video post-production**.
             """
         )
         
-        st.markdown("### Highlights at a Glance")
+        st.markdown("### Quick Overview")
         
         m_col1, m_col2 = st.columns(2)
         with m_col1:
@@ -195,8 +233,8 @@ if page == "Home":
                 <div class="metric-value">IIT (ISM) Dhanbad</div>
             </div>
             <div class="metric-card">
-                <div class="metric-label">Secondary (12th)</div>
-                <div class="metric-value">95.8% (DPS E City)</div>
+                <div class="metric-label">YouTube Channel</div>
+                <div class="metric-value">@darkreaperedits</div>
             </div>
             """, unsafe_allow_html=True)
             
@@ -207,8 +245,8 @@ if page == "Home":
                 <div class="metric-value">Mining Engineering</div>
             </div>
             <div class="metric-card">
-                <div class="metric-label">High School (10th)</div>
-                <div class="metric-value">97.2% (Best of 5)</div>
+                <div class="metric-label">Core Focus</div>
+                <div class="metric-value">Sustainable Mining</div>
             </div>
             """, unsafe_allow_html=True)
 
@@ -230,19 +268,19 @@ elif page == "About":
         <div class="custom-card">
             <div class="card-title">Background & Philosophy</div>
             <div class="card-body">
-                Hailing from <b>Rourkela, Odisha</b>—a city rich in industrial heritage—I naturally developed an interest in core engineering systems and resource extraction technologies early on. This led me to pursue my B.Tech in Mining Engineering at the premier <b>Indian Institute of Technology (Indian School of Mines), Dhanbad</b>.
+                Originally from <b>Rourkela, Odisha</b>, I developed an early interest in heavy industries and core engineering systems. Currently, I am pursuing my B.Tech in Mining Engineering at <b>IIT (ISM) Dhanbad</b>.
                 <br><br>
-                Beyond standard academic curricula, I consider myself a lifelong learner on an eternal search for knowledge. I believe the best engineering outcomes happen when rigorous technical analysis meets effective visual communication.
+                I am driven by an unending curiosity to learn across disciplines. Reach out for anything—no professional jargon required!
             </div>
         </div>
 
         <div class="custom-card">
-            <div class="card-title">Core Interests & Goals</div>
+            <div class="card-title">Key Interests & Philosophy</div>
             <div class="card-body">
                 <ul>
-                    <li><b>Resource Optimization & Mining Tech:</b> Understanding modern geomechanics, underground and surface extraction method planning, and sustainable mining solutions.</li>
-                    <li><b>Digital Content Creation:</b> Advanced video editing, visual effects, and post-production workflows utilizing industry-standard toolsets.</li>
-                    <li><b>Interdisciplinary Problem Solving:</b> Bridging core field engineering with modern software, simulation tools, and media storytelling.</li>
+                    <li><b>Sustainable Mining & Conservation:</b> Strongly interested in eco-friendly mineral extraction methods, land reclamation, mine safety, and environmental stewardship in engineering.</li>
+                    <li><b>Avid Reading:</b> Passionate about continuous learning through literature, technical papers, and non-fiction.</li>
+                    <li><b>Video Editing & Content Creation:</b> Founder and creator behind <b>Dark Reaper Edits</b>, focusing on high-octane editing, motion graphics, and post-production workflows.</li>
                 </ul>
             </div>
         </div>
@@ -263,14 +301,14 @@ elif page == "Education":
         <div class="card-title">Indian Institute of Technology (Indian School of Mines), Dhanbad</div>
         <div class="card-subtitle">Bachelor of Technology (B.Tech) in Mining Engineering | Current</div>
         <div class="card-body">
-            Enrolled in one of Asia's most historic mining education departments. The curriculum blends foundational engineering principles with specialized mineral industry training.
+            Studying at one of India's premier mining engineering institutions.
             <br><br>
             <b>Key Focus Areas:</b>
             <ul>
-                <li>Surface & Underground Mining Methods</li>
-                <li>Mine Automation, Safety, & Environmental Engineering</li>
-                <li>Geomechanics, Rock Mechanics, and Excavation Technologies</li>
-                <li>Mineral Resource Estimation & Mine Planning</li>
+                <li>Sustainable Surface & Underground Mining Operations</li>
+                <li>Geomechanics, Rock Mechanics & Excavation</li>
+                <li>Environmental Impacts of Mining & Mine Safety</li>
+                <li>Mineral Economics & Resource Optimization</li>
             </ul>
         </div>
     </div>
@@ -279,7 +317,7 @@ elif page == "Education":
         <div class="card-title">Delhi Public School (DPS), Electronic City</div>
         <div class="card-subtitle">Senior Secondary Education (Class XII - CBSE) | <b>95.8%</b></div>
         <div class="card-body">
-            Demonstrated academic excellence in Physics, Chemistry, and Mathematics (PCM), achieving top academic tier ranking.
+            Graduated with high distinction in Physics, Chemistry, and Mathematics (PCM).
         </div>
     </div>
 
@@ -287,28 +325,38 @@ elif page == "Education":
         <div class="card-title">Delhi Public School (DPS), Electronic City</div>
         <div class="card-subtitle">Secondary Education (Class X - CBSE) | <b>97.2%</b> (Best of 5)</div>
         <div class="card-body">
-            Graduated with distinction, laying a robust foundation in quantitative sciences, mathematics, and analytical reasoning.
+            Achieved top-tier academic standing across core sciences and mathematics.
         </div>
     </div>
     """, unsafe_allow_html=True)
 
-# ---------- Skills & Hobbies Page ----------
-elif page == "Skills & Hobbies":
-    st.subheader("Skills, Tools & Hobbies")
+# ---------- Hobbies & Interests Page ----------
+elif page == "Hobbies & Interests":
+    st.subheader("Hobbies, Interests & Creative Work")
     
+    # YouTube Featured Section
+    st.markdown("""
+    <div class="yt-card">
+        <div class="yt-title">🎬 Dark Reaper Edits (YouTube)</div>
+        <div style="color: #E4E4E7; line-height: 1.6;">
+            I run an active video editing channel <b>@darkreaperedits</b> where I post high-quality edit edits, motion graphics, dynamic typography, and video transitions.
+            <br><br>
+            <a href="https://youtube.com/@darkreaperedits?si=X2zeEeIXC9luzx-s" target="_blank" class="yt-button">▶ Visit YouTube Channel</a>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
     col1, col2 = st.columns(2, gap="medium")
     
     with col1:
         st.markdown("""
         <div class="custom-card">
-            <div class="card-title">🎬 Post-Production & Motion Graphics</div>
+            <div class="card-title">🎥 Video Editing & Software</div>
             <div class="card-body">
-                I specialize in high-end video post-production, transforming raw footage into compelling narrative and visual content.
-                <br><br>
-                <b>Primary Tools:</b>
+                Mastering industry-standard post-production tools to produce visually compelling content:
                 <ul>
-                    <li><b>Adobe After Effects:</b> Motion graphics design, VFX compositing, dynamic typography, expression scripts, and speed ramping.</li>
-                    <li><b>Adobe Premiere Pro:</b> Narrative editing, audio normalization, multi-camera syncing, color grading, and timeline workflow management.</li>
+                    <li><b>Adobe After Effects:</b> Motion graphics, compositing, expression scripts, VFX, visual syncing.</li>
+                    <li><b>Adobe Premiere Pro:</b> Timeline editing, sound design, color grading, sequence assembling.</li>
                 </ul>
             </div>
         </div>
@@ -317,13 +365,12 @@ elif page == "Skills & Hobbies":
     with col2:
         st.markdown("""
         <div class="custom-card">
-            <div class="card-title">🛠️ Technical & Academic Competencies</div>
+            <div class="card-title">📚 Reading & Environmental Conservation</div>
             <div class="card-body">
-                Alongside multimedia editing, my engineering toolkit encompasses quantitative analysis and technical computing:
+                Outside of engineering and editing:
                 <ul>
-                    <li><b>Engineering Fundamentals:</b> Mine design principles, survey data processing, and rock mechanics.</li>
-                    <li><b>Software & Productivity:</b> Python scripting, Streamlit UI development, Git version control, LaTeX documentation.</li>
-                    <li><b>Analytical Thinking:</b> Structured problem-solving, quantitative modeling, and technical reporting.</li>
+                    <li><b>Avid Reader:</b> Constantly exploring books across diverse genres, scientific publications, and technical literature.</li>
+                    <li><b>Conservation & Sustainability:</b> Deep interest in integrating ecological conservation techniques into modern mining frameworks to minimize carbon footprint and environmental degradation.</li>
                 </ul>
             </div>
         </div>
@@ -331,32 +378,27 @@ elif page == "Skills & Hobbies":
 
 # ---------- Projects & Experience Page ----------
 elif page == "Projects & Experience":
-    st.subheader("Projects & Technical Work")
-    
-    st.write("A selection of academic projects, technical exploration, and creative work.")
+    st.subheader("Projects & Creative Experience")
 
-    with st.expander("📌 Streamlit Portfolio & CV Web Application", expanded=True):
+    with st.expander("🎥 Dark Reaper Edits - Channel & Video Production", expanded=True):
+        st.markdown("""
+        * **Platform:** [YouTube (@darkreaperedits)](https://youtube.com/@darkreaperedits?si=X2zeEeIXC9luzx-s)
+        * **Role:** Content Creator, Editor, VFX Artist
+        * **Tech Stack:** Adobe After Effects, Adobe Premiere Pro
+        * **Overview:** Crafting high-grade video edits using complex keyframing, speed ramping, audio sync, and visual effects.
+        """)
+
+    with st.expander("🌱 Sustainable Mining & Conservation Studies"):
+        st.markdown("""
+        * **Domain:** Environmental Engineering & Sustainable Extraction
+        * **Focus:** Researching zero-harm mining techniques, mine void reclamation, dust control technologies, and eco-friendly tailings management.
+        """)
+
+    with st.expander("📌 Streamlit Dark-Themed CV App"):
         st.markdown("""
         * **Role:** Developer
-        * **Tech Stack:** Python, Streamlit, HTML5/Custom CSS
-        * **Overview:** Designed and built an interactive, glassmorphism-themed personal web app featuring real-time state navigation, custom metrics, and dynamic rendering.
-        * **Key Outcome:** Created a responsive, user-friendly digital resume eliminating the need for static PDFs.
-        """)
-        st.write("[📄 View Source Code / Repo](#)")
-
-    with st.expander("📌 Advanced Motion Graphics & Editing Projects"):
-        st.markdown("""
-        * **Role:** Video Editor / Visual Effects Designer
-        * **Software:** Adobe After Effects, Premiere Pro
-        * **Overview:** Created short-form and long-form video edits incorporating custom motion graphics, kinetic typography, seamless transitions, and color grading.
-        * **Key Outcome:** Developed an efficient visual workflow for rapid video assembly without sacrificing rendering quality.
-        """)
-
-    with st.expander("📌 Mining Engineering Fieldwork & Lab Studies"):
-        st.markdown("""
-        * **Role:** Student Researcher / Trainee
-        * **Focus Area:** Underground & Open-pit Mining Operations
-        * **Overview:** Practical laboratory analysis and theoretical evaluations covering rock specimen testing, ventilation design parameters, and heavy machinery utilization in modern extraction sites.
+        * **Tech Stack:** Python, Streamlit, Custom Dark Mode CSS
+        * **Overview:** Designed and deployed a custom interactive dark-mode portfolio showcasing academic credentials, projects, and social links.
         """)
 
 # ---------- Contact Page ----------
@@ -368,11 +410,12 @@ elif page == "Contact":
     with col1:
         st.markdown("""
         <div class="custom-card">
-            <div class="card-title">Reach Out</div>
+            <div class="card-title">Let's Connect</div>
             <div class="card-body">
-                I am always open to discussing new opportunities, academic collaborations, creative video projects, or general engineering topics. No formal jargon needed—feel free to drop a message!
+                I am on an eternal search for knowledge and information — feel free to reach out for anything, no professional jargon needed!
                 <br><br>
-                📧 <b>Email:</b> <a href="mailto:asimanshusamal@gmail.com">asimanshusamal@gmail.com</a><br>
+                📧 <b>Email:</b> <a href="mailto:asimanshusamal@gmail.com" style="color: #38BDF8;">asimanshusamal@gmail.com</a><br>
+                🎬 <b>YouTube:</b> <a href="https://youtube.com/@darkreaperedits?si=X2zeEeIXC9luzx-s" target="_blank" style="color: #EF4444;">@darkreaperedits</a><br>
                 📍 <b>Location:</b> IIT (ISM) Dhanbad, Jharkhand, India<br>
                 🏠 <b>Hometown:</b> Rourkela, Odisha, India
             </div>
