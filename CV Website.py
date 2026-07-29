@@ -207,11 +207,11 @@ st.markdown("""
 st.markdown("""
 <div class="header-container">
     <div class="header-name">Asimanshu Samal</div>
-    <div class="header-subtitle">Mining Engineering Student • AECP AI Lead • Conservation Enthusiast</div>
+    <div class="header-subtitle">Mining Engineering Student • AECP Lead • Conservation Enthusiast</div>
     <div class="badge-container">
         <span class="badge">📍 IIT (ISM) Dhanbad</span>
         <span class="badge">🎓 B.Tech Mining Engineering</span>
-        <span class="badge">🤖 AECP Project</span>
+        <span class="badge">🐾 AECP (Extinction Calendar)</span>
         <span class="badge">🌱 Sustainable Mining</span>
     </div>
 </div>
@@ -236,18 +236,18 @@ if page == "Home":
             Welcome to my personal digital portfolio! I am an undergraduate Mining Engineering student at 
             **IIT (ISM) Dhanbad** on an eternal search for knowledge and information.
             
-            My focus centers on **AECP (AI-driven platform)**, technical mechanics of **sustainable resource extraction**, 
-            **environmental conservation**, reading, and digital content creation.
+            My core focus centers on the **Animal Extinction Calendar Project (AECP)**, sustainable resource extraction, 
+            environmental conservation, reading, and digital content creation.
             """
         )
         
-        st.markdown("### Featured Highlight")
+        st.markdown("### Featured Flagship Project")
         st.markdown("""
         <div class="featured-card">
-            <div class="featured-title">🚀 AECP Project</div>
-            <div class="card-subtitle">AI & Educational Technology Initiative</div>
+            <div class="featured-title">🐾 AECP (Animal Extinction Calendar Project)</div>
+            <div class="card-subtitle">Data Science Initiative for Species Conservation</div>
             <div class="card-body">
-                Working on AECP to leverage artificial intelligence for enhanced learning and practical frameworks.
+                Predicts potential extinction dates of endangered and critically endangered animals using historical population data (up to 250 years) combined with variables like habitats, deforestation, and rainfall indexes.
                 <br><br>
                 <a href="https://sites.google.com/view/aecp-ai/home" target="_blank" class="action-button">🌐 Visit AECP Website</a>
             </div>
@@ -285,7 +285,7 @@ elif page == "About":
             <div class="card-body">
                 Originally from <b>Rourkela, Odisha</b>, I developed an early interest in heavy industries and core engineering systems. Currently, I am pursuing my B.Tech in Mining Engineering at <b>IIT (ISM) Dhanbad</b>.
                 <br><br>
-                I am driven by an unending curiosity to learn across disciplines—from core mining mechanics to AI tools like AECP. Reach out for anything—no professional jargon required!
+                I am driven by an unending curiosity to learn across disciplines—from core mining and environmental conservation to data science initiatives like AECP. Reach out for anything—no professional jargon required!
             </div>
         </div>
 
@@ -293,9 +293,9 @@ elif page == "About":
             <div class="card-title">Core Focus Areas</div>
             <div class="card-body">
                 <ul>
-                    <li><b>AECP Initiative:</b> Developing AI-integrated resources for technical accessibility and streamlined learning.</li>
-                    <li><b>Sustainable Mining & Conservation:</b> Interested in eco-friendly mineral extraction, land reclamation, and environmental stewardship in core engineering.</li>
-                    <li><b>Continuous Learning & Editing:</b> Avid reader with background experience in video editing (such as <i>Dark Reaper Edits</i>).</li>
+                    <li><b>AECP (Animal Extinction Calendar Project):</b> Data science project predicting extinction timelines based on government data, population metrics, deforestation, and rainfall indexes to raise conservation awareness.</li>
+                    <li><b>Sustainable Mining & Conservation:</b> Keen interest in eco-friendly mineral extraction methods, land reclamation, and environmental stewardship in engineering.</li>
+                    <li><b>Continuous Learning & Reading:</b> Avid reader exploring diverse non-fiction, technical literature, and video editing.</li>
                 </ul>
             </div>
         </div>
@@ -349,18 +349,19 @@ elif page == "Education":
 elif page == "Projects & Experience":
     st.subheader("Key Projects & Experience")
 
-    # Flagship AECP Project
+    # Flagship AECP Project Details
     st.markdown("""
     <div class="featured-card">
-        <div class="featured-title">🌟 AECP (AI Platform)</div>
-        <div class="card-subtitle">Flagship Project | <a href="https://sites.google.com/view/aecp-ai/home" target="_blank" style="color: #A5B4FC;">sites.google.com/view/aecp-ai</a></div>
+        <div class="featured-title">🐾 AECP (Animal Extinction Calendar Project)</div>
+        <div class="card-subtitle">Flagship Data Science Initiative | <a href="https://sites.google.com/view/aecp-ai/home" target="_blank" style="color: #A5B4FC;">sites.google.com/view/aecp-ai</a></div>
         <div class="card-body">
-            AECP is an AI-driven platform focused on empowering technical research, streamlining workflow accessibility, and deploying modern artificial intelligence tools for educational and domain-specific applications.
+            A data science project that predicts potential extinction dates of endangered and critically endangered animals. 
             <br><br>
-            <b>Highlights:</b>
+            <b>Key Highlights:</b>
             <ul>
-                <li>Designed for accessible AI integration across academic workflows.</li>
-                <li>Structured knowledge hubs for rapid exploration and learning.</li>
+                <li><b>Data Sources:</b> Leverages government datasets containing up to 250 years of historical population data.</li>
+                <li><b>Environmental Factors:</b> Integrates variables such as habitat changes, deforestation rates, and rainfall indexes.</li>
+                <li><b>Purpose & Interactivity:</b> Serves as an urgency deadline highlighting what happens without conservation steps, and allows users to modify state variables to see how changes affect the predicted outcome.</li>
             </ul>
             <a href="https://sites.google.com/view/aecp-ai/home" target="_blank" class="action-button">🔗 Open AECP Site</a>
         </div>
@@ -399,8 +400,8 @@ elif page == "Hobbies & Interests":
             <div class="card-title">📚 Reading & Conservation</div>
             <div class="card-body">
                 <ul>
-                    <li><b>Avid Reading:</b> Passionate about exploring books across non-fiction, technology, and literature.</li>
-                    <li><b>Environmental Conservation:</b> Keen interest in sustainable engineering methods that minimize ecological footprints in resource sectors.</li>
+                    <li><b>Avid Reader:</b> Passionate about exploring books across non-fiction, science, and literature.</li>
+                    <li><b>Environmental Conservation:</b> Dedicated to species protection and integrating ecological awareness into heavy engineering sectors.</li>
                 </ul>
             </div>
         </div>
@@ -409,12 +410,11 @@ elif page == "Hobbies & Interests":
     with col2:
         st.markdown("""
         <div class="custom-card">
-            <div class="card-title">🎬 Video Editing</div>
+            <div class="card-title">🎬 Video Editing (Secondary Interest)</div>
             <div class="card-body">
                 Casual editing and motion graphics creation using industry-standard tools:
                 <ul>
-                    <li><b>Adobe After Effects:</b> Visual effects, dynamic keyframing.</li>
-                    <li><b>Adobe Premiere Pro:</b> Post-production and sound editing.</li>
+                    <li><b>Adobe After Effects & Premiere Pro:</b> Visual effects and post-production.</li>
                     <li><b>YouTube Channel:</b> <a href="https://youtube.com/@darkreaperedits?si=X2zeEeIXC9luzx-s" target="_blank" style="color: #38BDF8;">@darkreaperedits</a></li>
                 </ul>
             </div>
@@ -435,7 +435,7 @@ elif page == "Contact":
                 I am on an eternal search for knowledge and information — feel free to reach out for anything, no professional jargon needed!
                 <br><br>
                 📧 <b>Email:</b> <a href="mailto:asimanshusamal@gmail.com" style="color: #38BDF8; font-weight: 600;">asimanshusamal@gmail.com</a><br>
-                🤖 <b>AECP Project:</b> <a href="https://sites.google.com/view/aecp-ai/home" target="_blank" style="color: #A5B4FC; font-weight: 600;">sites.google.com/view/aecp-ai</a><br>
+                🐾 <b>AECP Website:</b> <a href="https://sites.google.com/view/aecp-ai/home" target="_blank" style="color: #A5B4FC; font-weight: 600;">sites.google.com/view/aecp-ai</a><br>
                 📍 <b>Location:</b> IIT (ISM) Dhanbad, Jharkhand, India<br>
                 🏠 <b>Hometown:</b> Rourkela, Odisha, India
             </div>
