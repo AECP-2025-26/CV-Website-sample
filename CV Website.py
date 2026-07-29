@@ -74,6 +74,11 @@ st.markdown("""
         color: #F1F5F9 !important;
         backdrop-filter: blur(8px);
         border: 1px solid rgba(255, 255, 255, 0.2);
+        text-decoration: none;
+    }
+    .badge:hover {
+        border-color: #38BDF8;
+        color: #38BDF8 !important;
     }
 
     /* Glass Cards */
@@ -166,7 +171,13 @@ st.markdown("""
         border-right: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    /* Action Link Button */
+    /* Action Link Buttons */
+    .button-group {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 0.8rem;
+    }
     a.action-button {
         display: inline-block;
         background: linear-gradient(90deg, #4F46E5, #6366F1);
@@ -175,11 +186,21 @@ st.markdown("""
         border-radius: 10px;
         text-decoration: none;
         font-weight: 600;
-        margin-top: 0.8rem;
         box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4);
         transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-    a.action-button:hover {
+    a.action-button-secondary {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: #FFFFFF !important;
+        padding: 0.65rem 1.3rem;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: transform 0.2s ease, background 0.2s ease;
+    }
+    a.action-button:hover, a.action-button-secondary:hover {
         transform: translateY(-2px);
         box-shadow: 0 6px 20px rgba(79, 70, 229, 0.6);
     }
@@ -212,7 +233,7 @@ st.markdown("""
         <span class="badge">📍 IIT (ISM) Dhanbad</span>
         <span class="badge">🎓 B.Tech Mining Engineering</span>
         <span class="badge">🐾 AECP (Extinction Calendar)</span>
-        <span class="badge">🌱 Sustainable Mining</span>
+        <a href="https://github.com/AECP-2025-26/CV-Website-sample/tree/main" target="_blank" class="badge">💻 GitHub Profile</a>
     </div>
 </div>
 """, unsafe_allow_html=True)
@@ -249,7 +270,10 @@ if page == "Home":
             <div class="card-body">
                 Predicts potential extinction dates of endangered and critically endangered animals using historical population data (up to 250 years) combined with variables like habitats, deforestation, and rainfall indexes.
                 <br><br>
-                <a href="https://sites.google.com/view/aecp-ai/home" target="_blank" class="action-button">🌐 Visit AECP Website</a>
+                <div class="button-group">
+                    <a href="https://sites.google.com/view/aecp-ai/home" target="_blank" class="action-button">🌐 Visit AECP Website</a>
+                    <a href="https://github.com/AECP-2025-26/CV-Website-sample/tree/main" target="_blank" class="action-button-secondary">💻 View GitHub Repo</a>
+                </div>
             </div>
         </div>
         """, unsafe_allow_html=True)
@@ -363,7 +387,10 @@ elif page == "Projects & Experience":
                 <li><b>Environmental Factors:</b> Integrates variables such as habitat changes, deforestation rates, and rainfall indexes.</li>
                 <li><b>Purpose & Interactivity:</b> Serves as an urgency deadline highlighting what happens without conservation steps, and allows users to modify state variables to see how changes affect the predicted outcome.</li>
             </ul>
-            <a href="https://sites.google.com/view/aecp-ai/home" target="_blank" class="action-button">🔗 Open AECP Site</a>
+            <div class="button-group">
+                <a href="https://sites.google.com/view/aecp-ai/home" target="_blank" class="action-button">🔗 Open AECP Site</a>
+                <a href="https://github.com/AECP-2025-26/CV-Website-sample/tree/main" target="_blank" class="action-button-secondary">💻 Source Code on GitHub</a>
+            </div>
         </div>
     </div>
     """, unsafe_allow_html=True)
@@ -379,6 +406,7 @@ elif page == "Projects & Experience":
         * **Role:** Developer
         * **Tech Stack:** Python, Streamlit, Custom CSS
         * **Overview:** Designed and deployed a dynamic personal application featuring high-contrast gradient UI elements and glassmorphism styling.
+        * **Repository:** [View on GitHub](https://github.com/AECP-2025-26/CV-Website-sample/tree/main)
         """)
 
     with st.expander("🎥 Media Production & Video Editing"):
@@ -435,6 +463,7 @@ elif page == "Contact":
                 I am on an eternal search for knowledge and information — feel free to reach out for anything, no professional jargon needed!
                 <br><br>
                 📧 <b>Email:</b> <a href="mailto:asimanshusamal@gmail.com" style="color: #38BDF8; font-weight: 600;">asimanshusamal@gmail.com</a><br>
+                💻 <b>GitHub:</b> <a href="https://github.com/AECP-2025-26/CV-Website-sample/tree/main" target="_blank" style="color: #38BDF8; font-weight: 600;">AECP-2025-26/CV-Website-sample</a><br>
                 🐾 <b>AECP Website:</b> <a href="https://sites.google.com/view/aecp-ai/home" target="_blank" style="color: #A5B4FC; font-weight: 600;">sites.google.com/view/aecp-ai</a><br>
                 📍 <b>Location:</b> IIT (ISM) Dhanbad, Jharkhand, India<br>
                 🏠 <b>Hometown:</b> Rourkela, Odisha, India
